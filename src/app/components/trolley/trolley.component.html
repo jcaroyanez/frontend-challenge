@@ -1,0 +1,31 @@
+<div class="modal-content">
+   <div class="modal-header">
+      <p class="header-text">Tu Carrito</p>
+      <button class="btn btn-close" (click)="bsModalRef.hide()">
+         <i class="fas fa-times"></i>
+      </button>
+   </div>
+   <div class="modal-body">
+      <div class="list-empty" *ngIf="trolleyListProduct.length == 0">
+         <a click-stop-propagation>
+            <i class="fas fa-shopping-cart"></i>
+         </a>
+         <p>Tu carrito esta vacio</p>
+      </div>
+      <ul class="list-group list-group-flush" *ngFor="let product of trolleyListProduct;let i = index">
+         <li class="list-group-item">
+            <div class="info-product">
+               <div class="text-infos">
+                  <p class="product-name">{{product.name}}</p>
+                  <p>{{product.price}}</p>
+                  <p class="product-quantity">{{product.quantity}} unidades</p>
+               </div>
+               <input class="form-control" type="number" [(ngModel)]="product.total" (ngModelChange)="updateTotalProduct(i,$event)" min="0">
+               <div class="btn-remove" (click)="remove(i)">
+                  <i class="fas fa-trash-alt"></i>
+               </div>
+            </div>
+         </li>
+      </ul>
+   </div>
+</div>

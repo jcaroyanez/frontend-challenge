@@ -1,0 +1,21 @@
+<div class="ml-main">
+    <div class="inner-main">
+        <aside class="filters">
+            <p class="text-category" *ngIf="categorySelected">{{categorySelected.name}}</p>
+            <p class="text-info-category">Subcategoría</p>
+            <div>
+                <p *ngFor="let item of listMenu" class="{{item.styleClass}}" (click)="openProductsCategories(item.id)">{{item.name}}</p>
+            </div>
+            <app-filters-layout
+                (warnOrderLessPrice$)="orderLessPrice($vent)"
+                (warOrderHigherPrice$)="orderHigherPrice($event)"
+                (warOrderLessQuantity$)="orderLessQuantity($event)"
+                (warOrderHegherQuantity$)="orderHigHerQuantity($event)"
+                (warOrderAvailability$)="orderAvailability($event)"
+            ></app-filters-layout>
+        </aside>
+        <section class="result">
+            <app-list-products></app-list-products>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<p class="text-filters">Filtros</p>
+<div class="filter">
+    <p class="not-margin text-quantity">Unidades</p>
+    <div class="content-quantity ">
+        <input type="number" class="form-control" [(ngModel)]="filterQuantity" min="0">
+        <button class="btn button-filter" (click)="filterQuantiry()">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+</div>
+<div class="filter">
+    <p class="not-margin text-quantity">Precio</p>
+    <div class="contnet-filter-price">
+        <input type="number" class="form-control" placeholder="min" [(ngModel)]="minPrice" min="0">
+        <input type="number" class="form-control" placeholder="max" [(ngModel)]="maxPrice" min="0">
+        <button class="btn button-filter" (click)="filterPrice()">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+<div class="filter">
+    <p class="not-margin text-order" (click)="orderLessPrice()">Ordenar Por Menor Precio</p>
+    <p class="not-margin text-order" (click)="orderHigherPrice()">Ordenar Por Mayor Precio</p>
+    <p class="not-margin text-order" (click)="orderLessQuantity()">Ordenar Por Menor Cantidad</p>
+    <p class="not-margin text-order" (click)="orderHigHerQuantity()">Ordenar Por Mayor Cantidad</p>
+    <p class="not-margin text-order" (click)="orderAvailability()">Ordenar Por disponibilidad</p>
+</div>

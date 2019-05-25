@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+.modal-trolley{
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    .modal-content{
+        height: 100vh !important;
+        max-width: 500px;
+        border: 0;
+        border-radius: 0;
+    }
+}
+.text-category-menu{
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0 0 12px;
+    color: #333;
+    margin: 0;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 10%;
+    font-weight: 400;
+}
+
+.text-subcategory{
+    color: #666;
+    font-size: 14px;
+    width: 113px;
+    margin: 0;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 15%;
+    font-weight: 400;
+}
+
+body{
+   font-family: Roboto,sans-serif !important;
+   background: #eee;
+}
+
+.not-margin{
+    margin: 0;
+}
+
+@media(max-width:400px){
+    .modal-trolley{
+        .modal-content{
+            height: 100vh !important;
+            max-width: 300px;
+        }
+    }
+}

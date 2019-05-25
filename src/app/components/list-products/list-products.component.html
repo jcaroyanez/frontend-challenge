@@ -1,0 +1,26 @@
+<div class="content-products">
+  <div *ngFor="let product of listProducts" class="item-product">
+    <div class="card view">
+      <div class="text-product">
+          <p>{{ product.name }}</p>
+      </div>
+      <div class="card-body customer-body">
+          <div class="item-info">
+            <p class="product-price">{{product.price}}</p>
+            <p class="product-quantity">{{product.quantity}} unidades</p>
+            <button class="btn btn-car"
+                    popover="Agregar al carrito"
+                    triggers="mouseenter:mouseleave"
+                    *ngIf="product.available"
+                    (click)="addProductToTrolley(product)"
+            >
+                <i class="fas fa-cart-arrow-down"></i>
+            </button>
+          </div>
+          <div class="text-available" *ngIf="!product.available">
+            No disponible
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
